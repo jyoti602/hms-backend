@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const doctorRoutes = require('./routes/doctorRoutes');
-
+const dashboardRoutes = require('./routes/dashboardRoutes');
 const app = express();
 
 // Middleware
@@ -18,7 +18,9 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);                // e.g., POST /api/auth/signup
 app.use('/api/appointments', appointmentRoutes); // e.g., GET /api/appointments
 app.use('/api/contact', contactRoutes);          // e.g., POST /api/contact
-app.use('/api/doctor', doctorRoutes);   
+app.use('/api/doctor', doctorRoutes);  
+app.use('/api', dashboardRoutes);
+
 // Root route
 app.get('/', (req, res) => res.send('API Running'));
 

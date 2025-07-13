@@ -89,7 +89,7 @@ exports.fetchPatients = (callback) => {
       updated_at 
     FROM appointments
     WHERE status IN ('Confirmed', 'Completed')
-    ORDER BY appointment_date DESC, appointment_time ASC
+    ORDER BY id DESC
   `;
 
   db.query(query, callback);
